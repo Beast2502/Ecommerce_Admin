@@ -7,12 +7,10 @@ import Table from "../../components/Table/table";
 const Banner = () =>{
     return (
        <div className="banner-container">
-            {/* <div className="banner-title">Upload Banner</div>
-            <div className="banner-fields">
-                <input type="text" placeholder="Banner Name" />
-                <input type= "file"/>
-                <Button name={'Submit'} color={"rgb(0, 106, 245)"}></Button>
-            </div> */}
+            <div className="banner-header">
+                <p>Upload Banner</p>
+                <Button name={"Upload"} color={"orange"} />
+            </div>
             <Table/>
        </div>
     )

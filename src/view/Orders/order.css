@@ -1,0 +1,13 @@
+.order-container{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  
+}
+.order-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}

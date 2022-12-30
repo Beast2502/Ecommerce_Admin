@@ -1,8 +1,19 @@
 import React from "react";
 import "./addCategory.css";
 
-const AddCategory = ()=> {
-  return <>Add AddCategory</>;
-}
+import Button from "../../components/Button/Button"
+import Table from "../../components/Table/table";
+
+const AddCategory = () => {
+  return (
+    <div className="category-container">
+      <div className="category-header">
+        <p>Categories</p>
+        <Button name={"ADD"} color={"orange"} />
+      </div>
+      <Table />
+    </div>
+  );
+};
 
 export default AddCategory;
