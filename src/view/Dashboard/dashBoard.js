@@ -31,7 +31,9 @@ class DashBorad extends Component {
           <button>Submit Comment</button>
         </div>
       </form>
-      <CommentList/>
+     <div>
+     <CommentList/>
+     </div>
       </>
     )
   }
