@@ -4,6 +4,7 @@
   align-items: flex-start;
   background-color: rgb(226, 236, 236);
   width: 10%;
+  max-width: 20%;
   height: 92vh;
   align-content: center;
   align-items: center;
