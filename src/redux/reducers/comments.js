@@ -1,6 +1,6 @@
 import { SAVE_COMMENT } from "../actions/types";
 
-function comments(state = [] , action){
+const comments =(state = [] , action)=>{
     switch(action.type){
         case SAVE_COMMENT:
           

@@ -4,7 +4,7 @@ import "./addProduct.css";
 
 
 import Button from "../../components/Button/Button"
-import Table from "../../components/Table/table";
+import Table from "../../components/Table/bannerTable";
 const AddProduct = () => {
   return (
     <div className="product-container">

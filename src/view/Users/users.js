@@ -3,7 +3,7 @@ import "./users.css";
 
 
 import Button from "../../components/Button/Button"
-import Table from "../../components/Table/table";
+import Table from "../../components/Table/bannerTable";
 
 const Users = () => {
   return (

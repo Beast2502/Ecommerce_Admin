@@ -1,4 +1,4 @@
-import { SAVE_COMMENT } from "./types";
+import { ADD_BANNER, SAVE_COMMENT } from "./types";
 
 export function saveComment(comment){
     console.log(comment,"Action")
@@ -6,4 +6,11 @@ export function saveComment(comment){
         type: SAVE_COMMENT,
         payload:comment
     };
+}
+
+export function addBanner(banner){
+    return {
+        type : ADD_BANNER,
+        payload : banner
+    }
 }
