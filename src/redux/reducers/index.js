@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 
-import commentsReducer from './comments';
-import bannerReducer from './banners';
+import commentsReducer from './commentsReducer';
+import bannerReducer from './bannersReducer';
 
 export default combineReducers({
     comments : commentsReducer,
