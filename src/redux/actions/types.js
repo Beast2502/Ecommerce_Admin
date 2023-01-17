@@ -1,5 +1,8 @@
 export const SAVE_COMMENT = 'save_comment';
 
+export const USER_LOGGEDIN = 'USER_LOGGEDIN';
+export const USER_LOGOUT = 'USER_LOGOUT';
+
 export const ADD_BANNER = "ADD_BANNER";
 export const UPDATE_BANNER ="UPDATE_BANNER";
 export const DELETE_BANNER = "DELETE_BANNER";

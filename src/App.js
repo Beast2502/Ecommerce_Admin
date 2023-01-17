@@ -1,5 +1,7 @@
 import "./App.css";
 
+// Views
+import LoginView from "./view/Login/login";
 import Header from "./view/Header/header";
 import DashBoradView from "./view/Dashboard/dashBoard";
 import SideBarView from "./view/SideBar/sideBar";
@@ -13,24 +15,38 @@ import BannerView from "./view/Banner/banner";
 import { Route, Routes } from "react-router-dom";
 import AddCatModal from "./view/AddCategory/addCatModal";
 
-function App() {
+import { connect } from "react-redux";
+
+function App(props) {
   return (
     <div className="App">
-      <Header />
-      <div className="container">
-        <SideBarView />
-        <Routes>
-          <Route exact path="/" element={<DashBoradView />} />
-          <Route exact path="/banners" element={<BannerView />} />
-          <Route exact path="/category" element={<AddCategoryView />} />
-          <Route exact path="/addcat" element={<AddCatModal />} />
-          <Route exact path="/products" element={<AddProductView />} />          
-          <Route exact path="/orders" element={<OrdersView />} />
-          <Route exact path="/users" element={<UsersView />} />
-        </Routes>
-      </div>
+      {props.isActive ? (
+        <>
+          <Header />
+          <div className="container">
+            <SideBarView />
+            <Routes>
+              <Route exact path="/" element={<DashBoradView />} />
+              <Route exact path="/banners" element={<BannerView />} />
+              <Route exact path="/category" element={<AddCategoryView />} />
+              <Route exact path="/addcat" element={<AddCatModal />} />
+              <Route exact path="/products" element={<AddProductView />} />
+              <Route exact path="/orders" element={<OrdersView />} />
+              <Route exact path="/users" element={<UsersView />} />
+            </Routes>
+          </div>
+        </>
+      ) : (
+        <LoginView />
+      )}
     </div>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    isActive: state.isActive,
+  };
+};
+
+export default connect(mapStateToProps, null)(App);

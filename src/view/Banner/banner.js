@@ -4,7 +4,7 @@ import './banner.css';
 import Button from "../../components/Button/Button"
 import Table from "../../components/Table/bannerTable";
 import { connect } from "react-redux";
-import * as actions from '../../redux/actions'
+import * as actions from '../../redux/actions';
 
 const Banner = (props) =>{
     const [name , setBanner] = useState(' ');
