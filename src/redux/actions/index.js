@@ -1,4 +1,5 @@
-import { ADD_BANNER, SAVE_COMMENT } from "./types";
+import { ADD_BANNER, SAVE_COMMENT ,ADD_CATEGORY} from "./types";
+
 
 export function saveComment(comment){
     console.log(comment,"Action")
@@ -14,3 +15,11 @@ export function addBanner(banner){
         payload : banner
     }
 }
+
+export const addCategory =(category)=>{
+    return{
+        type : ADD_CATEGORY,
+        payload : category
+    }
+}
+

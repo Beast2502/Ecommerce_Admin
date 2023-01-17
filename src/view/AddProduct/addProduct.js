@@ -2,7 +2,6 @@ import React from "react";
 
 import "./addProduct.css";
 
-
 import Button from "../../components/Button/Button"
 import Table from "../../components/Table/bannerTable";
 const AddProduct = () => {

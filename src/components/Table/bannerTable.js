@@ -8,8 +8,8 @@ const Table = (props) => {
       <table className="table-container">
         <tr>
           <th>S.No.</th>
-          <th>Banner Name</th>
-          <th>Banner Image</th>
+          <th>Name</th>
+          <th>Image</th>
           <th>Action</th>
         </tr>
         {
@@ -17,8 +17,8 @@ const Table = (props) => {
             return (
               <tr>
               <td>1</td>
-              <td>{data.bannerName}</td>
-              <td>{data.bannerPath}</td>
+              <td>{data.name}</td>
+              <td>{data.url}</td>
               <td><Button name={"Delete"} color={"red"} /></td>
             </tr>
             )

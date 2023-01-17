@@ -7,8 +7,8 @@ import { connect } from "react-redux";
 import * as actions from '../../redux/actions'
 
 const Banner = (props) =>{
-    const [bannerName , setBanner] = useState(' ');
-    const [bannerPath ,setPath] = useState(' ');
+    const [name , setBanner] = useState(' ');
+    const [url ,setPath] = useState(' ');
     const handleNameChange = (event) =>{
         setBanner(event.target.value)
     }
@@ -18,9 +18,7 @@ const Banner = (props) =>{
 
     const handleSubmit = (event)=>{
         event.preventDefault();
-        console.log(bannerName);
-        console.log(bannerPath);
-        props.addBanner({bannerName,bannerPath});
+        props.addBanner({name,url});
         setBanner('');
         setPath('');
         
@@ -37,7 +35,7 @@ const Banner = (props) =>{
                     <input type='text' placeholder="Name" onChange={handleNameChange} />
                     <input type='file' placeholder ="File" onChange={handleFile}/>
                 </div>
-                <Button name={"Upload"} color={"orange"} onClick={handleSubmit} value={bannerName} />
+                <Button name={"Upload"} color={"orange"} onClick={handleSubmit} />
             </div>
             <Table data={props.banners}/>
        </div>
