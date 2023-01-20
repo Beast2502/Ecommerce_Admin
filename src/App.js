@@ -10,11 +10,12 @@ import AddProductView from "./view/AddProduct/addProduct";
 import OrdersView from "./view/Orders/orders";
 import UsersView from "./view/Users/users";
 import BannerView from "./view/Banner/banner";
+import AddDetails from "./view/AddProduct/addDetails";
 
 // Routes
 import { Route, Routes } from "react-router-dom";
-import AddCatModal from "./view/AddCategory/addCatModal";
 
+// Redux
 import { connect } from "react-redux";
 
 function App(props) {
@@ -29,8 +30,8 @@ function App(props) {
               <Route exact path="/" element={<DashBoradView />} />
               <Route exact path="/banners" element={<BannerView />} />
               <Route exact path="/category" element={<AddCategoryView />} />
-              <Route exact path="/addcat" element={<AddCatModal />} />
               <Route exact path="/products" element={<AddProductView />} />
+              <Route exact path="/products/addDetails" element={<AddDetails/>} />
               <Route exact path="/orders" element={<OrdersView />} />
               <Route exact path="/users" element={<UsersView />} />
             </Routes>

@@ -1,9 +1,10 @@
 import React from "react";  
+import "./InputField.css"
 
-const InputField = () =>{
+const InputField = (props) =>{
     return (
         <>
-            <input placeholder="name" />
+            <input placeholder={props.name} className="input-field" />
         </>
     )
 }
