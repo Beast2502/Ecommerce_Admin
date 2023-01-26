@@ -4,7 +4,7 @@ import "./InputField.css"
 const InputField = (props) =>{
     return (
         <>
-            <input placeholder={props.name} className="input-field" />
+            <input type={props.type} placeholder={props.name} className="input-field" onChange={props.handleChange}/>
         </>
     )
 }

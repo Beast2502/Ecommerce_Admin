@@ -1,4 +1,4 @@
-import { ADD_BANNER, SAVE_COMMENT, ADD_CATEGORY, USER_LOGGEDIN ,USER_LOGOUT} from "./types";
+import { ADD_PRODUCT, ADD_BANNER, SAVE_COMMENT, ADD_CATEGORY, USER_LOGGEDIN ,USER_LOGOUT} from "./types";
 
 export const authUser = (details) => {
   console.log(details);
@@ -28,6 +28,13 @@ export const addCategory = (category) => {
     type: ADD_CATEGORY,
     payload: category,
   };
+};
+
+export const addProduct =(product) =>{
+  return {
+    type : ADD_PRODUCT,
+    payload : product
+  }
 };
 
 export function saveComment(comment) {
