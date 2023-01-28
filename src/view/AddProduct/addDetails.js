@@ -60,6 +60,9 @@ const AddDetails = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if(addName === "" || addCat ===""){
+      alert("Opps ... Something you had miised")
+    }
     props.addProduct({
       addName,
       addCat,
@@ -81,14 +84,14 @@ const AddDetails = (props) => {
   return (
     <div className="product-container">
       <p>Add product</p>
-      <div className="">
+      <div className="product-sub-container">
         <InputField
           name={"Product Name"}
           type={"text"}
           handleChange={handleName}
         />
         <InputWithSearch
-          name={"Catogory Name"}
+          name={"Category Name"}
           list={categoryList}
           onChange={handleCategory}
         />
@@ -99,34 +102,27 @@ const AddDetails = (props) => {
           handleChange={handleQuant}
         />
         <InputField name={"Upload image"} />
-        <Button name={"Upload"} color={"rgb(223, 66, 66);"} />
-        <InputWithSearch name={"Color Name"} />
+      </div>
+      <p>Packing Details</p>
+      <div className="product-sub-container">
+        <InputWithSearch name={"Color Name"} onChange={handleCol} />
         <InputField name={"SKU"} type={"number"} handleChange={handleSku} />
         <InputField
           name={"Item Weight"}
           type={"number"}
           handleChange={handleWeight}
         />
-        <div>
-          <p>Item Dimension</p>
-          <InputField
-            name={"Lenghth"}
-            type={"number"}
-            handleChange={handleLen}
-          />
-          <InputField name={"Width"} type={"number"} handleChange={handleWid} />
-          <InputField
-            name={"Height"}
-            type={"number"}
-            handleChange={handleHei}
-          />
-        </div>
+      </div>
+      <p>Item Dimension</p>
 
-        <Button
-          name={"Add Product"}
-          color={"rgb(223, 66, 66);"}
-          onClick={handleSubmit}
-        />
+      <div className="product-sub-container">
+        <InputField name={"Length"} type={"number"} handleChange={handleLen} />
+        <InputField name={"Width"} type={"number"} handleChange={handleWid} />
+        <InputField name={"Height"} type={"number"} handleChange={handleHei} />
+      </div>
+
+      <div className="product-sub-btn">
+        <Button name={"Add Product"} color={"#1456eb"} onClick={handleSubmit} />
       </div>
     </div>
   );

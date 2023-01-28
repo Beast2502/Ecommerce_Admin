@@ -16,3 +16,14 @@
     text-decoration: none;
     color: white;
 }
+
+.product-sub-container{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10px;
+  
+}
+.product-sub-btn{
+    display: flex;
+    justify-content: center;
+}

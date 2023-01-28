@@ -5,16 +5,27 @@ import "./addProduct.css";
 import Table from "../../components/Table/bannerTable";
 import { NavLink } from "react-router-dom";
 
-const AddProduct = () => {
+import { connect } from "react-redux";
+
+const AddProduct = (props) => {
+  console.log(props.products ,"Checkkk values");
+
+  const data  = props.products;
   return (
     <div className="product-container">
       <div className="product-header">
         <p>Products </p>
         <button className="btn"><NavLink to={"./addDetails"} className='nav-link'>ADD</NavLink></button>
       </div>
-      <Table />
+      <Table data={data} />
     </div>
   );
 };
 
-export default AddProduct;
+const mapStateToprops =(state)=>{
+  return {
+    products : state.products
+  }
+}
+
+export default connect(mapStateToprops,null)(AddProduct);
