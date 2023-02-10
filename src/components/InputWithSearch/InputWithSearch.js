@@ -12,6 +12,7 @@ const InputWithSearch = (props) => {
           list="browsers"
           name="browser"
           id="browser"
+          value={props.value}
           placeholder={props.name}
           onChange={props.onChange}
         />

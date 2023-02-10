@@ -4,6 +4,7 @@ import "./addProduct.css";
 import InputField from "../../components/InputField/InputField";
 import InputWithSearch from "../../components/InputWithSearch/InputWithSearch";
 import Button from "../../components/Button/Button.js";
+import ImageUpload from "../../components/ImageUploader/ImageUpload";
 
 import { connect } from "react-redux";
 import * as actions from "../../redux/actions";
@@ -58,9 +59,10 @@ const AddDetails = (props) => {
     setHei(event.target.value);
   };
 
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    if(addName === "" || addCat ===""){
+    if(addName === "" || addCat ==="" || addDesc ==="" || addImage === "" || addCol ==="" ){
       alert("Opps ... Something you had miised")
     }
     props.addProduct({
@@ -76,6 +78,18 @@ const AddDetails = (props) => {
       addWid,
       addHei,
     });
+
+    setName("");
+    setCat("");
+    setDesc("");
+    setQuan("");
+    setImage("");
+    setCol("");
+    setSku("");
+    setWei("");
+    setLen("");
+    setWid("");
+    setHei("");
   };
   useEffect(() => {
     console.log(props.products);
@@ -87,28 +101,35 @@ const AddDetails = (props) => {
       <div className="product-sub-container">
         <InputField
           name={"Product Name"}
+          value={addName}
           type={"text"}
           handleChange={handleName}
         />
         <InputWithSearch
           name={"Category Name"}
+          value={addCat}
           list={categoryList}
           onChange={handleCategory}
         />
-        <InputField name={"Product Description"} handleChange={handleDesc} />
+        <InputField name={"Product Description"} value={addDesc} handleChange={handleDesc}  />
         <InputField
           name={"Quanity"}
+          value={addQuan}
           type={"number"}
           handleChange={handleQuant}
         />
-        <InputField name={"Upload image"} />
+        
+        
+        
+       <ImageUpload handleUpload = {setImage} value={addImage}/>
       </div>
       <p>Packing Details</p>
       <div className="product-sub-container">
-        <InputWithSearch name={"Color Name"} onChange={handleCol} />
-        <InputField name={"SKU"} type={"number"} handleChange={handleSku} />
+        <InputWithSearch name={"Color Name"} value={addCol} onChange={handleCol} />
+        <InputField name={"SKU"} value={addSku} type={"text"} handleChange={handleSku} />
         <InputField
           name={"Item Weight"}
+          value={addWeig}
           type={"number"}
           handleChange={handleWeight}
         />
@@ -116,13 +137,13 @@ const AddDetails = (props) => {
       <p>Item Dimension</p>
 
       <div className="product-sub-container">
-        <InputField name={"Length"} type={"number"} handleChange={handleLen} />
-        <InputField name={"Width"} type={"number"} handleChange={handleWid} />
-        <InputField name={"Height"} type={"number"} handleChange={handleHei} />
+        <InputField name={"Length"} value={addLen} type={"number"} handleChange={handleLen} />
+        <InputField name={"Width"} value={addWid} type={"number"} handleChange={handleWid} />
+        <InputField name={"Height"} value={addHei} type={"number"} handleChange={handleHei} />
       </div>
 
       <div className="product-sub-btn">
-        <Button name={"Add Product"} color={"#1456eb"} onClick={handleSubmit} />
+        <Button name={"Add Product"} color={"rgb(113 146 219"} onClick={handleSubmit} />
       </div>
     </div>
   );
