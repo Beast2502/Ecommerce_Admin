@@ -1,20 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./users.css";
 
+import Button from "../../components/Button/Button";
+import TableNew from "../../components/Table/tableNew";
+import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 
-import Button from "../../components/Button/Button"
-import Table from "../../components/Table/bannerTable";
 
 const Users = () => {
+  const [usersList, setUserList] = useState([]);
+
+  useEffect(() => {
+    setUserList([
+      {
+        name: "Mehul Saxena",
+        email: "mehulsaxena45@gmail.com",
+        active: true,
+      },
+      {
+        name: "Mehul Saxena",
+        email: "mehulsaxena45@gmail.com",
+        active: true,
+      },
+      {
+        name: "Mehul Saxena",
+        email: "mehulsaxena45@gmail.com",
+        active: true,
+      },
+      {
+        name: "Mehul Saxena",
+        email: "mehulsaxena45@gmail.com",
+        active: false,
+      },
+      {
+        name: "Mehul Saxena",
+        email: "mehulsaxena45@gmail.com",
+        active: true,
+      },
+    ]);
+  }, []);
+
   return (
     <div className="user-container">
       <div className="user-header">
         <p>Users</p>
-        <Button name={"ADD"} color={"orange"} />
+        <button className="btn"><NavLink to={"./addUsers"} className='nav-link'>ADD</NavLink></button>
       </div>
-      <Table />
+      <TableNew data={usersList} />
     </div>
   );
 };
 
-export default Users;
+const mapStateToprops = (state) =>{
+  return {}
+}
+
+export default connect(mapStateToprops,null)(Users);

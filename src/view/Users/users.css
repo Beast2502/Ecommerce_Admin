@@ -11,3 +11,10 @@
     align-items: center;
     align-content: center;
 }
+
+.user-active-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100px;
+}

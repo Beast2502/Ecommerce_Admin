@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./banner.css";
 
 import Button from "../../components/Button/Button";
-import Table from "../../components/Table/bannerTable";
+import Table from "../../components/Table/tables";
 import ImageUpload from "../../components/ImageUploader/ImageUpload";
 import InputField from "../../components/InputField/InputField";
 

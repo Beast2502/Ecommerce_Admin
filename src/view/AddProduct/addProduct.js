@@ -2,13 +2,12 @@ import React from "react";
 
 import "./addProduct.css";
 
-import Table from "../../components/Table/bannerTable";
+import Table from "../../components/Table/tables";
 import { NavLink } from "react-router-dom";
 
 import { connect } from "react-redux";
 
 const AddProduct = (props) => {
-  console.log(props.products ,"Checkkk values");
 
   const data  = props.products;
   return (

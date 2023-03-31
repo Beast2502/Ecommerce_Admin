@@ -27,3 +27,8 @@
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   }
+  
+  .dash-header{
+    display: flex;
+    flex-direction: row;
+  }
