@@ -6,7 +6,7 @@ const users = (state=[],action)=>{
         case ADD_USER:
             return [...state,action.payload]
         default:
-            return [...state,action.payload]
+            return state
     }
 }
 

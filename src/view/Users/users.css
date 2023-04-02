@@ -18,3 +18,17 @@
     align-items: center;
     width: 100px;
 }
+
+.user-sub-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    
+}
+.user-container{
+    display: flex;
+    
+}
+

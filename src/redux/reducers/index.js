@@ -4,6 +4,7 @@ import commentsReducer from './commentsReducer';
 import bannerReducer from './bannersReducer';
 import productReducer from "./productsReducer";
 import categoryReducer from "./categoriesReducer";
+import userReducer from "./usersReducer";
 import authReducer from "./authReducer";
 
 export default combineReducers({
@@ -11,5 +12,6 @@ export default combineReducers({
     banners : bannerReducer,
     categories : categoryReducer,
     products : productReducer,
-    isActive : authReducer
+    isActive : authReducer,
+    users : userReducer,
 });

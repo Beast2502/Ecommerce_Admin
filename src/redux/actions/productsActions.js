@@ -7,7 +7,7 @@ export const addProduct = (product) => {
   };
 };
 
-export const updateProduct = (product) => {
+export const updateProduct = (id ,product) => {
   return {
     type: UPDATE_PRODUCT,
     payload: product,
