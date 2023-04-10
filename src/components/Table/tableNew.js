@@ -4,37 +4,34 @@ import Button from "../Button/Button";
 import { useState } from "react";
 
 const TableNew = (props) => {
-    const [isChecked, setIsChecked] = useState(true);
-    console.log(Object.keys(props.data));
-
+    const [isChecked, setIsChecked] = useState(false);
+    // console.log(Object.keys(props.data));
   return (
     <div>
       <table className="table-container">
+     
         <tr>
-          <th>S.No.</th>
+          <th>S.no</th>
           <th>Name</th>
           <th>Email</th>
           <th>Active</th>
-          <th>Action</th>
+          <th>Actions</th>
         </tr>
         {
-          props.data ? props.data.map((data)=>{
+          props.data ? props.data.map((data,i)=>{
+            console.log(data.status)
             return (
               <tr>
-              <td>1</td>
-              <td>{data.name}</td>
+              <td>{i+1}</td>
+              <td>{data.firstName}</td>
               <td>{data.email}</td>
-              <td><input type="checkbox" id="horns" name="horns"  checked={data.active} /></td>
+              <td><input type="checkbox" id="horns" name="horns"  value="false" />{data.status}</td>
               <td><Button name={"View"} color={"#abdddd"} /></td>
             </tr>
             )
           }) :
           <tr>
-          <td>1</td>
-          <td>Banner 1</td>
-          <td>Image 1</td>
-          <td><input type="checkbox" id="horns" name="horns"  checked={isChecked} /></td>
-          <td><Button name={"View"} color={"#abdddd"} /></td>
+         <p>No data Found</p>
         </tr>
         }
        

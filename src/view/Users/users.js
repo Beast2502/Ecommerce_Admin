@@ -9,38 +9,12 @@ import TableNew from "../../components/Table/tableNew";
 import { NavLink } from "react-router-dom";
 
 
-const Users = () => {
+const Users = (props) => {
   const [usersList, setUserList] = useState([]);
-
+ console.log(props.users ,"YSSERRSSSS")
   useEffect(() => {
-    setUserList([
-      {
-        name: "Mehul Saxena",
-        email: "mehulsaxena45@gmail.com",
-        active: true,
-      },
-      {
-        name: "Mehul Saxena",
-        email: "mehulsaxena45@gmail.com",
-        active: true,
-      },
-      {
-        name: "Mehul Saxena",
-        email: "mehulsaxena45@gmail.com",
-        active: true,
-      },
-      {
-        name: "Mehul Saxena",
-        email: "mehulsaxena45@gmail.com",
-        active: false,
-      },
-      {
-        name: "Mehul Saxena",
-        email: "mehulsaxena45@gmail.com",
-        active: true,
-      },
-    ]);
-  }, []);
+    setUserList(props.users);
+  }, [props.users]);
 
   return (
     <div className="user-container">
@@ -55,7 +29,7 @@ const Users = () => {
 
 const mapStateToprops = (state) =>{
   return {
-    products:state.products
+    users:state.users
   }
 }
 
